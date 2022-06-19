@@ -12,7 +12,9 @@ Link to complete description of simulations - TO BE PROVIDED (easy GEMS?)
 ## Appetizers (interpolated to regular grid, plus movies and images)
 Several variables interpolated on regular global 5400x2700 grid and 2000x2000 polar grids. Don't use it for balance computations, those are neares neighbor interpolated data.
 
-**Movies:** https://nextcloud.awi.de/s/PY9FYznLXo4J7mY
+**Movies:** https://nextcloud.awi.de/s/PY9FYznLXo4J7mY 
+
+Names of the movies are : `[resolution]_[projection]_[variable].mp4`
 
 *Path on levante:* `/work/ab0995/a270088/NextGems_public/appetizer`
 
