@@ -1,3 +1,3 @@
-# NextGems Cycle2 Hackathon
+# nextGems Cycle2 Hackathon
 Cycle 2 example notebooks.
 
