@@ -66,6 +66,38 @@ VARDEFS = {
         "SFSTSK": ("Tskin", {"units": "degC"}),
     },
 }
+STAT_NR = {
+            1 : 'BARBADOS CLOUD OBSERVATORY' ,
+            2 : 'EUREC4A_1'     ,
+            3 : 'EUREC4A_2'     ,
+            4 : 'EUREC4A_3'     ,
+            5 : 'EUREC4A_4'     ,
+            6 : 'EUREC4A_5'     ,
+            7 : 'EUREC4A_6'     ,
+            8 : 'EUREC4A_7'     ,
+            9 : 'EUREC4A_8'     ,
+           10 : 'EUREC4A_9'     ,
+           11 : 'EUREC4A_10'    ,
+           12 : 'CABAUW_NL'     ,
+           13 : 'SODANKYLA_FIN' ,
+           14 : 'ARMS_OKL'      ,
+           15 : 'LINDENBERG_GER',
+           16 : 'BARROW_USA'    ,
+           17 : 'SUMMIT_DNK'    ,
+           18 : 'DOMEC_ANTARC'  ,
+           19 : 'PAYERNE_SWZ'   ,
+           20 : 'ATTO_BRZ'      ,
+           21 : 'MNSGERAIS_BRZ' ,
+           22 : 'BAHIA_BRZ'     ,
+           23 : 'SAN_LUIS_MXC'  ,
+           24 : 'ZACATECAS_MXC' ,
+           25 : 'SCOTLAND'      ,
+           26 : 'BURGOS_SPN'    ,
+           27 : 'HUELVA_SPN'    ,
+           28 : 'PSTERN_SPRING' ,
+           29 : 'PSTERN_AUTUMN' ,
+           30 : 'PSTERN_MARCH'  ,
+}
 
 HEADER_TYPES = {"exp": str, "vp": int, "i": int, "ty": int, "west": float, "north": float}
 
@@ -105,4 +137,5 @@ def load_ddh(filename, kind):
     if len(ds.level) == 1:
         ds = ds.squeeze().drop("level")
     
+    ds.attrs['Station name']= STAT_NR[int(header["i"])]
     return ds
