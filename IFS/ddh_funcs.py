@@ -105,6 +105,9 @@ HEADER_TYPES = {"exp": str, "vp": int, "i": int, "ty": int, "west": float, "nort
 def round_to_the_minute(times):
     ref = np.datetime64("2020-01-01")
     return ref + np.round((times - ref) / np.timedelta64(1, "m")) * np.timedelta64(1, "m")
+def round_to_the_interval(times):
+    ref = np.datetime64("2020-01-01")
+    return ref + np.round((times - ref) / np.timedelta64(450, "s")) * np.timedelta64(450, "s")
 
 def load_ddh(filename, kind):
     with open(filename) as ifh:
@@ -120,16 +123,20 @@ def load_ddh(filename, kind):
     levels, lidx = np.unique(ds.lev, return_inverse=True)
 
     if header["west"]>180: header["west"]=header["west"]-360.
+    if header["exp"]=='hr2n': # interval is 7.5mins for 9km run with expid hr2n
+      rounded=round_to_the_interval(times)
+    else:
+      rounded=round_to_the_minute(times)
+
     def reshape_var(var):
         out = np.full((len(times), len(levels)), np.nan, dtype=var.dtype)
         out[tidx, lidx] = var
         return xr.DataArray(out, dims=("time", "level"))
-    
     ds = xr.Dataset({
         newname: reshape_var(ds[oldname].values).assign_attrs(attrs)
         for oldname, (newname, attrs) in VARDEFS[kind].items()
     }, coords={
-        "time": (("time",), round_to_the_minute(times)),
+        "time": (("time",), rounded),
         "level": (("level",), levels),
         "station_nr": ((), header["i"]),
         "lat": ((), header["north"], {"units": "degrees_north"}),
