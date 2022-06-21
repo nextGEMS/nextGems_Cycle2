@@ -130,7 +130,7 @@ def load_ddh(filename, kind):
     }, coords={
         "time": (("time",), round_to_the_minute(times)),
         "level": (("level",), levels),
-        "station": ((), header["i"]),
+        "station_nr": ((), header["i"]),
         "lat": ((), header["north"], {"units": "degrees_north"}),
         "lon": ((), 360 - header["west"], {"units": "degrees_east"}),
     }, attrs={k: header[k] for k in ["exp", "vp", "ty"]})
@@ -138,5 +138,5 @@ def load_ddh(filename, kind):
     if len(ds.level) == 1:
         ds = ds.squeeze().drop("level")
     
-    ds.attrs['Station name']= STAT_NR[int(header["i"])]
+    ds.coords['station_name']= STAT_NR[int(header["i"])]
     return ds
