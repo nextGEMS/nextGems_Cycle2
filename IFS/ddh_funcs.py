@@ -119,6 +119,7 @@ def load_ddh(filename, kind):
     times, tidx = np.unique(ds.time, return_inverse=True)
     levels, lidx = np.unique(ds.lev, return_inverse=True)
 
+    if header["west"]>180: header["west"]=header["west"]-360.
     def reshape_var(var):
         out = np.full((len(times), len(levels)), np.nan, dtype=var.dtype)
         out[tidx, lidx] = var
@@ -132,7 +133,7 @@ def load_ddh(filename, kind):
         "level": (("level",), levels),
         "station_nr": ((), header["i"]),
         "lat": ((), header["north"], {"units": "degrees_north"}),
-        "lon": ((), 360 - header["west"], {"units": "degrees_east"}),
+        "lon": ((),  header["west"], {"units": "degrees_east"}),
     }, attrs={k: header[k] for k in ["exp", "vp", "ty"]})
     
     if len(ds.level) == 1:
