@@ -1,0 +1,21 @@
+plugins:
+  source:
+    - module: intake_xarray
+    - module: gribscan
+
+sources:
+  ICMGG_atm2d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1235/a270046/cycle2-sync/tco2559-ng5/ICMGGall_update/json.dir.nonan/atm2d.json
+  ICMU_atm2d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1235/a270046/cycle2-sync/tco2559-ng5/ICMUAall/json.dir.nonan/atm2d.json
+  ICMU_atm3d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1235/a270046/cycle2-sync/tco2559-ng5/ICMUAall/json.dir.nonan/atm3d.json
