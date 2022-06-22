@@ -1,0 +1,6 @@
+sources:
+  tco2559-ng5:
+    description: 5km experiment, coupuled with FESOM
+    driver: yaml_file_cat
+    args:
+        path: "{{CATALOG_DIR}}/tco2559-ng5.yaml"
