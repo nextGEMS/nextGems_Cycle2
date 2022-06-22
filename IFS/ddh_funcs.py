@@ -45,11 +45,11 @@ VARDEFS = {
         "SFSLSF": ("lsf", {"units": "kg/m2","long_name": "Large scale snowfall"}),
         "SFSCF": ("cs", {"units": "kg/m2","long_name": "Convective snowfall"}),
         "SFSTCC": ("ttc", {"units": "1","long_name": "Total cloud cover"}),
-        "SFSLSPF": ("LS prec.frac", {"units": "1","long_name": "Large-scale precip. fraction"}),
+        "SFSLSPF": ("lspf", {"units": "1","long_name": "Large-scale precip. fraction"}),
         "SFSSWDO": ("sfcswd", {"units": "W/m2","long_name": "Surface downwards solar radiation"}),
         "SFSLWDO": ("sfclwd", {"units": "W/m2","long_name": "Surface downwards thermal radiation"}),
         "SFSZ": ("z", {"units": "m2/s2","long_name": "Orography"}),
-        "SFSLF": ("Land frac", {"units": "1","long_name": "Land Fraction"}),
+        "SFSLF": ("lf", {"units": "1","long_name": "Land Fraction"}),
         "S  HIST": ("sfcp", {"units": "Pa","long_name": "Surface Pressure"}),
     },
     "sfcpres": {
