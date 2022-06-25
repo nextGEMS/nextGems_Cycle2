@@ -17,6 +17,48 @@ sources:
       urlpath: reference::/home/m/m300827/nextgems/C2_hackathon_prep/tco3999-ng5_np.json
     description: nearest-neighbor interpolation to lat-lon grid
     driver: zarr
+  interpolated_global2d:
+    driver: zarr
+    args:
+      consolidated: False
+      compat: override
+      combine: nested
+      urlpath: 
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/MLD2/MLD2.fesom.json
+  interpolated_global_TS:
+    driver: zarr
+    args:
+      consolidated: False
+      compat: override
+      combine: nested
+      urlpath: 
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/salt/salt.fesom.json
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/temp/temp.fesom.json
+  interpolated_global_UV:
+    driver: zarr
+    args:
+      consolidated: False
+      compat: override
+      combine: nested
+      urlpath: 
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/u/u.fesom.json
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/u/v.fesom.json 
+  interpolated_np:
+    driver: zarr
+    args:
+      consolidated: False
+      compat: override
+      combine: nested
+      urlpath: 
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/m_ice_np/m_ice.fesom.json
+  interpolated_sp:
+    driver: zarr
+    args:
+      consolidated: False
+      compat: override
+      combine: nested
+      urlpath: 
+      - reference::/work/ab0995/a270088/NextGems_public/FESOM_interpolated/tco3999-ng5/m_ice_sp/m_ice.fesom.json
   original_2d:
     args:
       chunks:
