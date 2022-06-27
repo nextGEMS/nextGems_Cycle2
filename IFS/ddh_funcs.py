@@ -53,7 +53,7 @@ VARDEFS = {
         "S  HIST": ("sfcp", {"units": "Pa","long_name": "Surface Pressure"}),
     },
     "sfcpres": {
-        "S  HIST": ("SP", {"units": "Pa","long_name": "Surface Pressure"}),
+        "S  HIST": ("sfcp", {"units": "Pa","long_name": "Surface Pressure"}),
     },
     "sfcvar": {
         "SFST2M": ("2t", {"units": "K","long_name": "2m temperature"}),
@@ -100,7 +100,8 @@ STAT_NR = {
            '030' : 'PSTERN_MARCH'  ,
 }
 
-HEADER_TYPES = {"exp": str, "vp": int, "i": str, "ty": int, "west": float, "north": float}
+#HEADER_TYPES = {"exp": str, "vp": int, "i": str, "ty": int, "west": float, "north": float}
+HEADER_TYPES = {"exp": str, "vp": int, "i": int, "ty": int, "west": float, "north": float}
 
 def round_to_the_minute(times):
     ref = np.datetime64("2020-01-01")
@@ -146,5 +147,6 @@ def load_ddh(filename, kind):
     if len(ds.level) == 1:
         ds = ds.squeeze().drop("level")
     
-    ds.coords['station_name']= STAT_NR[header["i"].zfill(3)]
+    #ds.coords['station_name']= STAT_NR[header["i"].zfill(3)]
+    ds.attrs['station_name']= STAT_NR[str(header["i"]).zfill(3)]
     return ds
