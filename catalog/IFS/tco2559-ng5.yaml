@@ -30,6 +30,7 @@ sources:
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/2d/netcdf/tco2559-ng5_pc.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/llc/netcdf/tco2559-ng5_pc.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10u/netcdf/tco2559-ng5_pc.json
+      - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10v/netcdf/tco2559-ng5_pc.json
   interpolated_np:
     driver: zarr
     args:
