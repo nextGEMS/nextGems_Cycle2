@@ -28,7 +28,7 @@ sources:
       urlpath: 
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/2t/netcdf/tco2559-ng5_pc.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/2d/netcdf/tco2559-ng5_pc.json
-      - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/llc/netcdf/tco2559-ng5_pc.json
+      - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/lcc/netcdf/tco2559-ng5_pc.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10u/netcdf/tco2559-ng5_pc.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10v/netcdf/tco2559-ng5_pc.json
   interpolated_np:
@@ -53,7 +53,14 @@ sources:
       urlpath: 
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/2t/netcdf/tco2559-ng5_sp.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/2d/netcdf/tco2559-ng5_sp.json
-      - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/ci/netcdf/tco2559-ng5_sp.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/lcc/netcdf/tco2559-ng5_sp.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10u/netcdf/tco2559-ng5_sp.json
       - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/10v/netcdf/tco2559-ng5_sp.json
+  # interpolated_sp_ci:
+  #   driver: zarr
+  #   args:
+  #     consolidated: False
+  #     compat: override
+  #     combine: nested
+  #     urlpath:
+  #     - reference::/work/ab0995/a270088/NextGems_public/appetizer/IFS4.5/ci/netcdf/tco2559-ng5_sp.json
