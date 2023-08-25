@@ -14,6 +14,11 @@ sources:
     driver: yaml_file_cat
     args:
         path: "{{CATALOG_DIR}}/tco1279-orca025-concat.yaml"
+  tco1279-orca025-nodeep:
+    description: 9km baseline, coupled to NEMO, deep conv OFF
+    driver: yaml_file_cat
+    args:
+        path: "{{CATALOG_DIR}}/tco1279-orca025-nodeep.yaml"        
   tco3999-ng5-delete:
     description: 2.8km experiment, coupled with FESOM; not concatenated
     driver: yaml_file_cat

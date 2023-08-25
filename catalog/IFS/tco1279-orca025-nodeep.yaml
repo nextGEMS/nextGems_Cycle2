@@ -1,0 +1,21 @@
+plugins:
+  source:
+    - module: intake_xarray
+    - module: gribscan
+
+sources:
+  ICMGG_atm2d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1344/AWI/nextGEMS_Cycle2_IFS_concat/tco1279-orca025/nemo/varfiles_all/json.dir/atm2d.json
+  ICMU_atm2d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1344/AWI/nextGEMS_Cycle2_IFS_concat/tco1279-orca025/nemo/varfiles_all/json.dir/atm2d.json
+  ICMU_atm3d:
+    driver: zarr
+    args:
+      consolidated: False
+      urlpath: reference::/work/bm1344/AWI/nextGEMS_Cycle2_IFS_concat/tco1279-orca025/nemo/varfiles_all/json.dir/atm3d.json
